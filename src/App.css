@@ -1,0 +1,94 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.admin {
+  width: 60%;
+  margin: 5% 0 0 16%;
+}
+.steps-content {
+  margin-top: 3%;
+  margin-bottom: 3%;
+}
+.step1 {
+  margin-left: 38%;
+}
+.meal {
+  margin-bottom: 6%;
+}
+.restaurant {
+  margin-bottom: 12%;
+}
+.step-three {
+  display: flex;
+  margin-left: 30%;
+}
+.dish {
+  margin-right: 20%;
+  margin-bottom: 9%;
+}
+.add {
+  margin-bottom: 3%;
+}
+.step-four {
+  margin-bottom: 6%;
+}
+.body{
+  width: 400px;
+  margin-left: 33.33%;
+  margin-top: 50px;
+}
+.text{
+  float: left;
+  
+}
+.body .ant-input-number{
+  width: 100% !important;
+}
+.button{
+  margin-top: 20px;
+}
+.button1{
+  float: left;
+}
+.button2 {
+  margin-left: 256px;
+}
+.btn{
+  display: flex;
+  margin-top: 20px;
+}
