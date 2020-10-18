@@ -1,40 +1,33 @@
+/* eslint-disable no-sequences */
 import React, { useContext, useEffect, Fragment } from 'react';
-import {Button, Select, Form} from 'antd';
+import {Button, Select, Form } from 'antd';
 import {multiStepContext} from '../StepContext';
 import DataRestaurant from '../data/dishes.json';
 
-
-const {Option} = Select;
+const {Option}= Select;
 
 const StepTwo = () =>{
 	const {setStep, data, setData} = useContext(multiStepContext);
 	const [form] = Form.useForm();
 	const Data2 = DataRestaurant.dishes;
-
-    const handleChangRestaurant = (e) => {
-		setData({...data, 'Restaurant': e, })
+	const handleChangRestaurant = (e) => {
+		setData({...data, 'restaurant': e, })
         
 	}
 	const onFinish = (user) => {
 		setStep(2);
 	};
-	
-	const onFinishFailed = (errorInfo) => {
-	
-	};
+  
+    const onFinishFailed = (errorInfo) => {
+     
+	}; 
 	useEffect(() => {
         setData(data);
         form.setFieldsValue({ user: data })
-	}, [data, form, setData]);
-	// const arrFilter = Data2.availableMeals.includes(data.meal.value) === true;
-	// const a = arrFilter.filter((item, index) => arrFilter.indexOf(item) === index);
-
-	// var arrReduce = Data2.map((item, index) => {item.})
-	// );
-
-    return (
+    }, [data, form, setData])
+    return(
         <div className='body'>
-            <Form form={form}
+			<Form form={form}
 				name="basic"
 				initialValues={{
 					remember: true,
@@ -42,19 +35,19 @@ const StepTwo = () =>{
 				onFinish={onFinish}
 				onFinishFailed={onFinishFailed}
 			>
-                <Form.Item
-					label="Please Select a Restaurant"
+				<Form.Item
+					label="Please Select a restaurant"
 					name= {['user', 'restaurant']}
 					rules={[
 					{
 						required: true,
-						message: 'Please Select a meal',
+						message: 'Please Select a restaurant',
 					},
 					]}
 				>
 					<Select
 						labelInValue='restaurant'
-						placeholder='Select a Restaurant'
+						placeholder='Select a restaurant'
 						style={{width:400}}
 						value={data['restaurant']}
 						onChange={handleChangRestaurant}
@@ -67,16 +60,15 @@ const StepTwo = () =>{
 								</Fragment>
 						)) : ('')}
 					</Select>
-                </Form.Item>
+				</Form.Item>
 				<Form.Item >
 					<Button type="primary" htmlType="submit">
 						Next
 					</Button>
 				</Form.Item>
-            </Form>
+			</Form>
 			<div><Button onClick={()=> setStep(0)} >Previous</Button></div>
         </div>
     )
 }
-
-export default StepTwo;
+export default  StepTwo;
